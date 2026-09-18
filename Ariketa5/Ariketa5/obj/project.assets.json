@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lorea\\source\\repos\\Ariketa5\\Ariketa5\\Ariketa5.csproj",
+      "projectUniqueName": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa5\\Ariketa5\\Ariketa5.csproj",
       "projectName": "Ariketa5",
-      "projectPath": "C:\\Users\\lorea\\source\\repos\\Ariketa5\\Ariketa5\\Ariketa5.csproj",
+      "projectPath": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa5\\Ariketa5\\Ariketa5.csproj",
       "packagesPath": "C:\\Users\\lorea\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lorea\\source\\repos\\Ariketa5\\Ariketa5\\obj\\",
+      "outputPath": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa5\\Ariketa5\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

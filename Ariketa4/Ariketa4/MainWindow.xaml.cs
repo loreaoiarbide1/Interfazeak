@@ -19,6 +19,7 @@ namespace Ariketa4
         public MainWindow()
         {
             InitializeComponent();
+            UpdateValidation();
         }
 
         private void btnIrten_Click(object sender, RoutedEventArgs e)
@@ -29,6 +30,13 @@ namespace Ariketa4
 
         private void btnOnartu_Click(object sender, RoutedEventArgs e)
         {
+            
+           if (!btnOnartu.IsEnabled)
+            {
+                txtError.Visibility = Visibility.Visible;
+                return;
+            }
+
             string erabiltzailea = txtErabiltzailea.Text;
             string pasahitza = pwdPasahitza.Password;
             if (erabiltzailea == "admin" && pasahitza == "admin")
@@ -46,6 +54,22 @@ namespace Ariketa4
         {
             txtErabiltzailea.Clear();
             pwdPasahitza.Clear();
+            UpdateValidation();
+        }
+
+        
+        private void InputChanged(object sender, RoutedEventArgs e)
+        {
+            UpdateValidation();
+        }
+
+        private void UpdateValidation()
+        {
+            bool hasUser = !string.IsNullOrWhiteSpace(txtErabiltzailea.Text);
+            bool hasPass = !string.IsNullOrWhiteSpace(pwdPasahitza.Password);
+
+            btnOnartu.IsEnabled = hasUser && hasPass;
+            txtError.Visibility = btnOnartu.IsEnabled ? Visibility.Collapsed : Visibility.Visible;
         }
     }
 }

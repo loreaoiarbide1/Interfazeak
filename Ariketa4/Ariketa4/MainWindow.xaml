@@ -22,6 +22,7 @@
             Margin="299,90,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
+            TextChanged="InputChanged"
             TextWrapping="Wrap" />
 
         <Label
@@ -37,7 +38,8 @@
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Click="btnOnartu_Click"
-            Content="Onartu" />
+            Content="Onartu"
+            IsEnabled="False" />
 
         <Button
             x:Name="btnGarbitu"
@@ -62,7 +64,17 @@
             Width="120"
             Margin="299,149,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            VerticalAlignment="Top"
+            PasswordChanged="InputChanged" />
 
+        <!--  Errore mezua  -->
+        <TextBlock
+            x:Name="txtError"
+            Margin="299,190,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Foreground="Red"
+            Text="Mesedez, bete bi eremuak."
+            Visibility="Collapsed" />
     </Grid>
 </Window>

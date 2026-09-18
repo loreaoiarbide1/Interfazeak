@@ -1,14 +1,13 @@
-﻿<Window
-    x:Class="Ariketa5.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:local="clr-namespace:Ariketa5"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="MainWindow"
-    Width="800"
-    Height="450"
-    mc:Ignorable="d">
+﻿<Window x:Class="Ariketa5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Ariketa5"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        Width="800"
+        Height="450"
+        mc:Ignorable="d">
     <Grid>
         <Label
             Margin="364,22,0,0"
@@ -96,14 +95,20 @@
             Click="btnTamainaGutxiago_Click"
             Content="- Tamaina" />
 
-        <TextBlock
+        <RichTextBox
             x:Name="txtTestua"
             Width="327"
-            Height="81"
+            Height="120"
             Margin="181,199,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            TextWrapping="Wrap" />
+            AcceptsReturn="True">
+            <FlowDocument>
+                <Paragraph>
+                    Idatzi edo itsatsi testua hemen, hautatu zati bat saguarekin eta sakatu "Hautatu" botoia.
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
 
         <Button
             x:Name="btnHautatu"
@@ -124,6 +129,13 @@
             Content="Irten"
             RenderTransformOrigin="0.514,1.405" />
 
-
+        <TextBlock
+            x:Name="lblMezua"
+            Width="400"
+            Height="60"
+            Margin="181,330,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
     </Grid>
 </Window>
