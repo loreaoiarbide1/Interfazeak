@@ -1,0 +1,129 @@
+﻿<Window
+    x:Class="Ariketa5.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Ariketa5"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <Label
+            Margin="364,22,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="PROBAKO TESTUA" />
+
+        <Button
+            x:Name="btnComicSans"
+            Width="93"
+            Height="22"
+            Margin="181,80,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnComicSans_Click"
+            Content="Comic Sans" />
+
+        <Button
+            x:Name="btnLodia"
+            Width="93"
+            Height="23"
+            Margin="298,79,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnLodia_Click"
+            Content="Lodia" />
+
+        <Button
+            x:Name="btnMarratua"
+            Width="93"
+            Height="22"
+            Margin="415,79,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnMarratua_Click"
+            Content="Marratua" />
+
+        <Button
+            x:Name="btnTamainaGehiago"
+            Width="93"
+            Height="22"
+            Margin="533,79,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnTamainaGehiago_Click"
+            Content="+ Tamaina" />
+
+        <Button
+            x:Name="btnCourier"
+            Width="93"
+            Height="23"
+            Margin="181,132,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnCourier_Click"
+            Content="Courier" />
+
+        <Button
+            x:Name="btnEtzana"
+            Width="93"
+            Height="23"
+            Margin="298,132,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnEtzana_Click"
+            Content="Etzana" />
+
+        <Button
+            x:Name="btnAzpimarratua"
+            Width="93"
+            Height="23"
+            Margin="415,132,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnAzpimarratua_Click"
+            Content="Azpimarratua" />
+
+        <Button
+            x:Name="btnTamainaGutxiago"
+            Width="93"
+            Height="23"
+            Margin="533,132,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnTamainaGutxiago_Click"
+            Content="- Tamaina" />
+
+        <TextBlock
+            x:Name="txtTestua"
+            Width="327"
+            Height="81"
+            Margin="181,199,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+
+        <Button
+            x:Name="btnHautatu"
+            Width="86"
+            Margin="601,260,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnHautatu_Click"
+            Content="Hautatu" />
+
+        <Button
+            x:Name="btnIrten"
+            Width="86"
+            Margin="601,308,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnIrten_Click"
+            Content="Irten"
+            RenderTransformOrigin="0.514,1.405" />
+
+
+    </Grid>
+</Window>

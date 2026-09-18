@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lorea\\source\\repos\\Ariketa6\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{77476F43-53CA-4DBB-8F30-0D33BD492C66}|Ariketa6\\Ariketa6.csproj|c:\\users\\lorea\\source\\repos\\ariketa6\\ariketa6\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77476F43-53CA-4DBB-8F30-0D33BD492C66}|Ariketa6\\Ariketa6.csproj|solutionrelative:ariketa6\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77476F43-53CA-4DBB-8F30-0D33BD492C66}|Ariketa6\\Ariketa6.csproj|c:\\users\\lorea\\source\\repos\\ariketa6\\ariketa6\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{77476F43-53CA-4DBB-8F30-0D33BD492C66}|Ariketa6\\Ariketa6.csproj|solutionrelative:ariketa6\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\lorea\\source\\repos\\Ariketa6\\Ariketa6\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Ariketa6\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\lorea\\source\\repos\\Ariketa6\\Ariketa6\\MainWindow.xaml",
+              "RelativeToolTip": "Ariketa6\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-09-16T07:24:07.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\lorea\\source\\repos\\Ariketa6\\Ariketa6\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Ariketa6\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\lorea\\source\\repos\\Ariketa6\\Ariketa6\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Ariketa6\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-16T07:24:06.922Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

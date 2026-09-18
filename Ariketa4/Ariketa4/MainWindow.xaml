@@ -1,0 +1,68 @@
+﻿<Window
+    x:Class="Ariketa4.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Ariketa4"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <Label
+            Margin="192,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Erabiltzailea:" />
+
+        <TextBox
+            x:Name="txtErabiltzailea"
+            Width="120"
+            Margin="299,90,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+
+        <Label
+            Margin="192,149,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Pasahitza:" />
+
+        <Button
+            x:Name="btnOnartu"
+            Width="74"
+            Margin="156,238,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnOnartu_Click"
+            Content="Onartu" />
+
+        <Button
+            x:Name="btnGarbitu"
+            Width="74"
+            Margin="285,238,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnGarbitu_Click"
+            Content="Garbitu" />
+
+        <Button
+            x:Name="btnIrten"
+            Width="74"
+            Margin="408,238,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnIrten_Click"
+            Content="Irten" />
+
+        <PasswordBox
+            x:Name="pwdPasahitza"
+            Width="120"
+            Margin="299,149,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+
+    </Grid>
+</Window>

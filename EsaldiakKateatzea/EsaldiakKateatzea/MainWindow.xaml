@@ -1,0 +1,95 @@
+﻿<Window
+    x:Class="EsaldiakKateatzea.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:EsaldiakKateatzea"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <TextBox
+            x:Name="txtEsaldia"
+            Width="310"
+            Margin="150,60,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap" />
+
+        <Button
+            x:Name="btnEsaldia1"
+            Width="70"
+            Margin="150,124,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnEsaldia1_Click"
+            Content="Esaldia 1" />
+
+        <Button
+            x:Name="btnEsaldia2"
+            Width="70"
+            Margin="251,124,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnEsaldia2_Click"
+            Content="Esaldia 2" IsEnabled="False" />
+
+        <Button
+            x:Name="btnEsaldia3"
+            Width="70"
+            Margin="350,124,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnEsaldia3_Click"
+            Content="Esaldia 3" IsEnabled="False" />
+
+        <Button
+            x:Name="btnEsaldia4"
+            Width="70"
+            Margin="150,169,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnEsaldia4_Click"
+            Content="Esaldia 4" IsEnabled="False" />
+
+        <Button
+            x:Name="btnEsaldia5"
+            Width="70"
+            Margin="251,169,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnEsaldia5_Click"
+            Content="Esaldia 5" IsEnabled="False" />
+
+        <Button
+            x:Name="btnBatu"
+            Width="70"
+            Margin="350,169,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnBatu_Click"
+            Content="Batu" IsEnabled="False" />
+
+        <Button
+            x:Name="btnGarbitu"
+            Width="270"
+            Margin="150,233,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnGarbitu_Click"
+            Content="Garbitu" />
+
+        <Button
+            x:Name="btnIrten"
+            Width="270"
+            Margin="150,280,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnIrten_Click"
+            Content="Irten" />
+
+    </Grid>
+</Window>

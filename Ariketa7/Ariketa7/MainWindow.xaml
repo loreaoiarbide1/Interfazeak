@@ -1,0 +1,186 @@
+﻿<Window
+    x:Class="Ariketa7.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Ariketa7"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid Background="#F0F0F0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- TextBox de resultado -->
+        <TextBox
+        x:Name="txtEmaitza"
+        Grid.Row="0"
+        Margin="10"
+        Padding="10"
+        Background="Yellow"
+        FontSize="24"
+        TextAlignment="Right"
+        TextWrapping="Wrap"
+        VerticalAlignment="Center" />
+
+        <!-- Grid principal de botones -->
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Fila 1 -->
+            <Button
+            x:Name="btnZazpi"
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="5,5,23,5"
+            Click="btnZazpi_Click"
+            Content="7"
+            FontSize="18" />
+
+            <Button
+            x:Name="btnZortzi"
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="5,5,23,5"
+            Click="btnZortzi_Click"
+            Content="8"
+            FontSize="18" />
+
+            <Button
+            x:Name="btnBederatzi"
+            Grid.Row="0"
+            Grid.Column="2"
+            Margin="5,5,21,5"
+            Click="btnBederatzi_Click"
+            Content="9"
+            FontSize="18" />
+
+            <Button
+            x:Name="btnC"
+            Grid.Row="0"
+            Grid.Column="3"
+            Margin="19,5,5,5"
+            Click="btnC_Click"
+            Content="C"
+            FontSize="18" />
+
+            <!-- Fila 2 -->
+            <Button
+            x:Name="btnLau"
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="5,5,23,5"
+            Click="btnLau_Click"
+            Content="4"
+            FontSize="18" />
+
+            <Button
+            x:Name="btnBost"
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="5,5,23,5"
+            Click="btnBost_Click"
+            Content="5"
+            FontSize="18" />
+
+            <Button
+            x:Name="btnSei"
+            Grid.Row="1"
+            Grid.Column="2"
+            Margin="5,5,0,5"
+            Click="btnSei_Click"
+            Content="6"
+            FontSize="18" HorizontalAlignment="Left" Width="169" />
+
+            <Button
+            x:Name="btnZatiketa"
+            Grid.Row="1"
+            Grid.Column="3"
+            Margin="19,5,5,5"
+            Click="btnZatiketa_Click"
+            Content="/"
+            FontSize="18" />
+
+            <!-- Fila 3 -->
+            <Button
+            x:Name="btnBat"
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="5,5,23,5"
+            Click="btnBat_Click"
+            Content="1"
+            FontSize="18" />
+
+            <Button
+            x:Name="btnBi"
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="5,5,23,5"
+            Click="btnBi_Click"
+            Content="2"
+            FontSize="18" />
+
+            <Button
+            x:Name="btnHiru"
+            Grid.Row="2"
+            Grid.Column="2"
+            Margin="5,5,21,5"
+            Click="btnHiru_Click"
+            Content="3"
+            FontSize="18" />
+
+            <Button
+            x:Name="btnBiderketa"
+            Grid.Row="2"
+            Grid.Column="3"
+            Margin="19,5,5,5"
+            Click="btnBiderketa_Click"
+            Content="X"
+            FontSize="18" />
+
+            <!-- Fila 4 -->
+            <Button
+            x:Name="btnZero"
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="5,5,23,5"
+            Click="btnZero_Click"
+            Content="0"
+            FontSize="18" />
+
+            <Button
+            x:Name="btnKoma"
+            Grid.Row="3"
+            Grid.Column="2"
+            Margin="5,5,21,5"
+            Click="btnKoma_Click"
+            Content=","
+            FontSize="18" />
+
+            <Button
+            x:Name="btnBerdin"
+            Grid.Row="3"
+            Grid.Column="3"
+            Margin="19,5,5,5"
+            Click="btnBerdin_Click"
+            Content="="
+            FontSize="18" />
+        </Grid>
+    </Grid>
+</Window>

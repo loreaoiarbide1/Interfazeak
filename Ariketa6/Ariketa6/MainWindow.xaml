@@ -1,0 +1,67 @@
+﻿<Window
+    x:Class="Ariketa6.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Ariketa6"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <Label
+            Margin="306,65,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Idatzi testu bat"
+            FontSize="20"
+            FontWeight="Bold" />
+
+        <TextBox
+            x:Name="txtTestua"
+            Width="199"
+            Margin="280,125,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+
+        <TextBox
+            x:Name="txtTestua2"
+            Width="199"
+            Margin="280,172,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" Height="19" />
+
+        <TextBox
+            x:Name="txtTestua3"
+            Width="199"
+            Margin="280,217,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" Height="18" />
+
+        <Button
+            x:Name="btnGarbitu"
+            Click="btnGarbitu_Click"
+            Width="77"
+            Height="26"
+            Margin="280,261,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Garbitu" />
+
+        <Button
+            x:Name="btnIrten"
+            Click="btnIrten_Click"
+            Width="78"
+            Height="26"
+            Margin="382,261,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Irten"
+            RenderTransformOrigin="0.505,1.26" />
+
+    </Grid>
+</Window>
