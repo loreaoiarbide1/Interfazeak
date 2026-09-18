@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\lorea\\source\\repos\\Ariketa3\\",
+  "WorkspaceRootPath": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|c:\\users\\lorea\\source\\repos\\ariketa3\\ariketa3\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|solutionrelative:ariketa3\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|c:\\users\\lorea\\source\\repos\\ariketa3\\ariketa3\\emaitzawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|c:\\users\\lorea\\source\\repos\\interfazeak\\ariketa3\\ariketa3\\emaitzawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|solutionrelative:ariketa3\\emaitzawindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|c:\\users\\lorea\\source\\repos\\ariketa3\\ariketa3\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|c:\\users\\lorea\\source\\repos\\interfazeak\\ariketa3\\ariketa3\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|solutionrelative:ariketa3\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|c:\\users\\lorea\\source\\repos\\interfazeak\\ariketa3\\ariketa3\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|solutionrelative:ariketa3\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|c:\\users\\lorea\\source\\repos\\ariketa3\\ariketa3\\emaitzawindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|c:\\users\\lorea\\source\\repos\\interfazeak\\ariketa3\\ariketa3\\emaitzawindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7B347A9A-A54E-48C7-AE4D-0F88808D46A9}|Ariketa3\\Ariketa3.csproj|solutionrelative:ariketa3\\emaitzawindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -36,9 +36,9 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "EmaitzaWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\lorea\\source\\repos\\Ariketa3\\Ariketa3\\EmaitzaWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa3\\Ariketa3\\EmaitzaWindow.xaml.cs",
               "RelativeDocumentMoniker": "Ariketa3\\EmaitzaWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\lorea\\source\\repos\\Ariketa3\\Ariketa3\\EmaitzaWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa3\\Ariketa3\\EmaitzaWindow.xaml.cs",
               "RelativeToolTip": "Ariketa3\\EmaitzaWindow.xaml.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAASwBUAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -46,11 +46,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "EmaitzaWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\lorea\\source\\repos\\Ariketa3\\Ariketa3\\EmaitzaWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa3\\Ariketa3\\EmaitzaWindow.xaml",
               "RelativeDocumentMoniker": "Ariketa3\\EmaitzaWindow.xaml",
-              "ToolTip": "C:\\Users\\lorea\\source\\repos\\Ariketa3\\Ariketa3\\EmaitzaWindow.xaml",
+              "ToolTip": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa3\\Ariketa3\\EmaitzaWindow.xaml",
               "RelativeToolTip": "Ariketa3\\EmaitzaWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-09-15T17:09:14.759Z",
@@ -60,25 +60,24 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\lorea\\source\\repos\\Ariketa3\\Ariketa3\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa3\\Ariketa3\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Ariketa3\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\lorea\\source\\repos\\Ariketa3\\Ariketa3\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa3\\Ariketa3\\MainWindow.xaml",
               "RelativeToolTip": "Ariketa3\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-09-11T11:42:06.813Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\lorea\\source\\repos\\Ariketa3\\Ariketa3\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa3\\Ariketa3\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Ariketa3\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\lorea\\source\\repos\\Ariketa3\\Ariketa3\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\lorea\\source\\repos\\Interfazeak\\Ariketa3\\Ariketa3\\MainWindow.xaml.cs",
               "RelativeToolTip": "Ariketa3\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAkwC4AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-11T11:42:06.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-09-11T11:42:06.6Z"
             }
           ]
         }

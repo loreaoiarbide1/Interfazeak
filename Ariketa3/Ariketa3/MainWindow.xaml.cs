@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -22,6 +23,10 @@ namespace Ariketa3
         public MainWindow()
         {
             InitializeComponent();
+
+            // Ez du uzten testu ez-numerikoak sartzea
+            txtZenbakia.PreviewTextInput += TxtZenbakia_PreviewTextInput;
+            
         }
 
         private void btnHurrengoa_Click(object sender, RoutedEventArgs e)
@@ -100,6 +105,20 @@ namespace Ariketa3
         {
             Application.Current.Shutdown();
 
+        }
+
+       
+        private void TxtZenbakia_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            // Karaktere ez-numerikoak ez uzteko
+            e.Handled = !IsTextNumeric(e.Text);
+        }
+
+       
+
+        private bool IsTextNumeric(string text)
+        {
+            return Regex.IsMatch(text, @"^\d+$");
         }
     }
 }

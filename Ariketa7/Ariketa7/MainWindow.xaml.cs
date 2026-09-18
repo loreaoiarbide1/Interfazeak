@@ -1,226 +1,136 @@
-﻿using System.Text;
+﻿using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Ariketa7
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
+        private double oraingoZenbakia = 0;
+        private double emaitza = 0;
+        private string eragiketa = "";
+        private bool zenbakiBerria = true;
+
         public MainWindow()
         {
             InitializeComponent();
+            txtEmaitza.Text = "0";
         }
 
-        private void btnZazpi_Click(object sender, RoutedEventArgs e)
+        private void ZenbakiaGehitu(string zenbakia)
         {
-            if (txtEmaitza.Text == "0")
+            if (zenbakiBerria)
             {
-                txtEmaitza.Text = "7";
+                txtEmaitza.Text = zenbakia;
+                zenbakiBerria = false;
             }
             else
             {
-                txtEmaitza.Text += "7";
+                if (zenbakia == "." && txtEmaitza.Text.Contains("."))
+                    return;
+                txtEmaitza.Text += zenbakia;
             }
-
         }
 
-        private void btnZortzi_Click(object sender, RoutedEventArgs e)
+        private void EragiketaGehitu(string op)
         {
-            if (txtEmaitza.Text == "0")
+            if (string.IsNullOrEmpty(eragiketa))
             {
-                txtEmaitza.Text = "8";
+                emaitza = double.Parse(txtEmaitza.Text);
             }
-            else
+            else if (!zenbakiBerria)
             {
-                txtEmaitza.Text += "8";
+                EmaitzaKalkulatu();
             }
 
+            eragiketa = op;
+            txtEmaitza.Text += " " + op;
+            zenbakiBerria = true;
         }
 
-        private void btnBederatzi_Click(object sender, RoutedEventArgs e)
+        private void EmaitzaKalkulatu()
         {
-            if (txtEmaitza.Text == "0")
+            // Testua eragiketa eta zenbakia bereizteko
+            string testuaEragiketaGabe = txtEmaitza.Text.Split(' ')[0];
+            double oraingoZenbakia = double.Parse(testuaEragiketaGabe);
+
+            double erantzuna = 0;
+            switch (eragiketa)
             {
-                txtEmaitza.Text = "9";
+                case "+":
+                    erantzuna = emaitza + oraingoZenbakia;
+                    break;
+                case "-":
+                    erantzuna = emaitza - oraingoZenbakia;
+                    break;
+                case "*":
+                    erantzuna = emaitza * oraingoZenbakia;
+                    break;
+                case "/":
+                    if (oraingoZenbakia == 0)
+                    {
+                        MessageBox.Show("Ezin da 0-z zatitu");
+                        return;
+                    }
+                    erantzuna = emaitza / oraingoZenbakia;
+                    break;
             }
-            else
-            {
-                txtEmaitza.Text += "9";
-            }
+
+            emaitza = erantzuna;
+            txtEmaitza.Text = erantzuna.ToString();
+            zenbakiBerria = true;
         }
 
-        private void btnBat_Click(object sender, RoutedEventArgs e)
+        // Zenbakiak
+        private void btnBat_Click(object sender, RoutedEventArgs e) => ZenbakiaGehitu("1");
+        private void btnBi_Click(object sender, RoutedEventArgs e) => ZenbakiaGehitu("2");
+        private void btnHiru_Click(object sender, RoutedEventArgs e) => ZenbakiaGehitu("3");
+        private void btnLau_Click(object sender, RoutedEventArgs e) => ZenbakiaGehitu("4");
+        private void btnBost_Click(object sender, RoutedEventArgs e) => ZenbakiaGehitu("5");
+        private void btnSei_Click(object sender, RoutedEventArgs e) => ZenbakiaGehitu("6");
+        private void btnZazpi_Click(object sender, RoutedEventArgs e) => ZenbakiaGehitu("7");
+        private void btnZortzi_Click(object sender, RoutedEventArgs e) => ZenbakiaGehitu("8");
+        private void btnBederatzi_Click(object sender, RoutedEventArgs e) => ZenbakiaGehitu("9");
+        private void btnZero_Click(object sender, RoutedEventArgs e) => ZenbakiaGehitu("0");
+        private void btnKoma_Click(object sender, RoutedEventArgs e) => ZenbakiaGehitu(".");
+        
+        // Eragiketak
+        private void btnZatiketa_Click(object sender, RoutedEventArgs e) => EragiketaGehitu("/");
+        private void btnBiderketa_Click(object sender, RoutedEventArgs e) => EragiketaGehitu("*");
+
+        private void btnBatu_Click(object sender, RoutedEventArgs e) => EragiketaGehitu("+");
+        private void btnKendu_Click(object sender, RoutedEventArgs e) => EragiketaGehitu("-");
+        private void btnPortzentaia_Click(object sender, RoutedEventArgs e)
         {
-            if (txtEmaitza.Text == "0")
+            if (double.TryParse(txtEmaitza.Text, out double zenbakia))
             {
-                txtEmaitza.Text = "1";
-            }
-            else
-            {
-                txtEmaitza.Text += "1";
+                txtEmaitza.Text = (zenbakia / 100).ToString();
+                zenbakiBerria = true;
             }
         }
 
-        private void btnBi_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtEmaitza.Text == "0")
-            {
-                txtEmaitza.Text = "2";
-            }
-            else
-            {
-                txtEmaitza.Text += "2";
-            }
-        }
-
-        private void btnHiru_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtEmaitza.Text == "0")
-            {
-                txtEmaitza.Text = "3";
-            }
-            else
-            {
-                txtEmaitza.Text += "3";
-            }
-        }
-
-        private void btnLau_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtEmaitza.Text == "0")
-            {
-                txtEmaitza.Text = "4";
-            }
-            else
-            {
-                txtEmaitza.Text += "4";
-            }
-        }
-
-        private void btnBost_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtEmaitza.Text == "0")
-            {
-                txtEmaitza.Text = "5";
-            }
-            else
-            {
-                txtEmaitza.Text += "5";
-            }
-        }
-
-        private void btnSei_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtEmaitza.Text == "0")
-            {
-                txtEmaitza.Text = "6";
-            }
-            else
-            {
-                txtEmaitza.Text += "6";
-            }
-        }
-
-        private void btnZero_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtEmaitza.Text == "0")
-            {
-                txtEmaitza.Text = "0";
-            }
-            else
-            {
-                txtEmaitza.Text += "0";
-            }
-        }
-
-        private void btnBatu_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtEmaitza.Text == "0")
-            {
-                txtEmaitza.Text = "+";
-            }
-            else
-            {
-                txtEmaitza.Text += "+";
-            }
-        }
-
-        private void btnKendu_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtEmaitza.Text == "0")
-            {
-                txtEmaitza.Text = "-";
-            }
-            else
-            {
-                txtEmaitza.Text += "-";
-            }
-        }
-
-        private void btnBerdin_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtEmaitza.Text == "0")
-            {
-                txtEmaitza.Text = "=";
-            }
-            else
-            {
-                txtEmaitza.Text += "=";
-            }
-        }
-
-        private void btnKoma_Click(object sender, RoutedEventArgs e)
-        {
-            if (txtEmaitza.Text == "0")
-            {
-                txtEmaitza.Text = ".";
-            }
-            else
-            {
-                txtEmaitza.Text += ".";
-            }
-        }
-
+        // Garbitu
         private void btnC_Click(object sender, RoutedEventArgs e)
         {
+            emaitza = 0;
+            eragiketa = "";
+            zenbakiBerria = true;
             txtEmaitza.Text = "0";
-
         }
 
-        private void btnZatiketa_Click(object sender, RoutedEventArgs e)
+        private void btnCE_Click(object sender, RoutedEventArgs e)
         {
-            if (txtEmaitza.Text == "0")
-            {
-                txtEmaitza.Text = "/";
-            }
-            else
-            {
-                txtEmaitza.Text += "/";
-            }
-
+            txtEmaitza.Text = "0";
+            zenbakiBerria = true;
         }
 
-        private void btnBiderketa_Click(object sender, RoutedEventArgs e)
+        // Emaitza kalkulatu
+        private void btnBerdin_Click(object sender, RoutedEventArgs e)
         {
-            if (txtEmaitza.Text == "0")
+            if (!string.IsNullOrEmpty(eragiketa))
             {
-                txtEmaitza.Text = "*";
+                EmaitzaKalkulatu();
+                eragiketa = "";
             }
-            else
-            {
-                txtEmaitza.Text += "*";
-            }
-
         }
     }
 }

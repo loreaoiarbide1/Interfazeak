@@ -5,182 +5,69 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Ariketa7"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="MainWindow"
+    Title="Kalkulagailua"
     Width="800"
-    Height="450"
+    Height="550"
     mc:Ignorable="d">
-    <Grid Background="#F0F0F0">
+    <Grid Margin="10" Background="#F0F0F0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <!-- TextBox de resultado -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Pantaila -->
         <TextBox
-        x:Name="txtEmaitza"
-        Grid.Row="0"
-        Margin="10"
-        Padding="10"
-        Background="Yellow"
-        FontSize="24"
-        TextAlignment="Right"
-        TextWrapping="Wrap"
-        VerticalAlignment="Center" />
-
-        <!-- Grid principal de botones -->
-        <Grid Grid.Row="1" Margin="10">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <!-- Fila 1 -->
-            <Button
-            x:Name="btnZazpi"
+            x:Name="txtEmaitza"
             Grid.Row="0"
             Grid.Column="0"
-            Margin="5,5,23,5"
-            Click="btnZazpi_Click"
-            Content="7"
-            FontSize="18" />
+            Grid.ColumnSpan="5"
+            Height="64"
+            Margin="0,0,0,10"
+            Padding="10"
+            VerticalAlignment="Center"
+            Background="Yellow"
+            FontSize="24"
+            IsReadOnly="True"
+            TextAlignment="Right"
+            TextWrapping="NoWrap" />
 
-            <Button
-            x:Name="btnZortzi"
-            Grid.Row="0"
-            Grid.Column="1"
-            Margin="5,5,23,5"
-            Click="btnZortzi_Click"
-            Content="8"
-            FontSize="18" />
+        <!-- Lerroa 1 -->
+        <Button x:Name="btnZazpi" Grid.Row="1" Grid.Column="0" Margin="5" Click="btnZazpi_Click" Content="7" FontSize="18" />
+        <Button x:Name="btnZortzi" Grid.Row="1" Grid.Column="1" Margin="5" Click="btnZortzi_Click" Content="8" FontSize="18" />
+        <Button x:Name="btnBederatzi" Grid.Row="1" Grid.Column="2" Margin="5" Click="btnBederatzi_Click" Content="9" FontSize="18" />
+        <Button x:Name="btnGarbitu" Grid.Row="1" Grid.Column="3" Margin="5" Click="btnC_Click" Content="C" FontSize="14" Background="#FFB6C6" FontWeight="Bold" />
+        <Button x:Name="btnCE" Grid.Row="1" Grid.Column="4" Margin="5" Click="btnCE_Click" Content="CE" FontSize="14" Background="#FFB6C6" FontWeight="Bold" />
 
-            <Button
-            x:Name="btnBederatzi"
-            Grid.Row="0"
-            Grid.Column="2"
-            Margin="5,5,21,5"
-            Click="btnBederatzi_Click"
-            Content="9"
-            FontSize="18" />
+        <!-- Lerroa 2 -->
+        <Button x:Name="btnLau" Grid.Row="2" Grid.Column="0" Margin="5" Click="btnLau_Click" Content="4" FontSize="18" />
+        <Button x:Name="btnBost" Grid.Row="2" Grid.Column="1" Margin="5" Click="btnBost_Click" Content="5" FontSize="18" />
+        <Button x:Name="btnSei" Grid.Row="2" Grid.Column="2" Margin="5" Click="btnSei_Click" Content="6" FontSize="18" />
+        <Button x:Name="btnZatiketa" Grid.Row="2" Grid.Column="3" Margin="5" Click="btnZatiketa_Click" Content="/" FontSize="18" Background="#FFE0B2" FontWeight="Bold" />
+        <Button x:Name="btnKendu" Grid.Row="2" Grid.Column="4" Margin="5" Click="btnKendu_Click" Content="−" FontSize="18" Background="#FFE0B2" FontWeight="Bold" />
 
-            <Button
-            x:Name="btnC"
-            Grid.Row="0"
-            Grid.Column="3"
-            Margin="19,5,5,5"
-            Click="btnC_Click"
-            Content="C"
-            FontSize="18" />
+        <!-- Lerroa 3 -->
+        <Button x:Name="btnBat" Grid.Row="3" Grid.Column="0" Margin="5" Click="btnBat_Click" Content="1" FontSize="18" />
+        <Button x:Name="btnBi" Grid.Row="3" Grid.Column="1" Margin="5" Click="btnBi_Click" Content="2" FontSize="18" />
+        <Button x:Name="btnHiru" Grid.Row="3" Grid.Column="2" Margin="5" Click="btnHiru_Click" Content="3" FontSize="18" />
+        <Button x:Name="btnBiderketa" Grid.Row="3" Grid.Column="3" Margin="5" Click="btnBiderketa_Click" Content="×" FontSize="18" Background="#FFE0B2" FontWeight="Bold" />
+        <Button x:Name="btnBatu" Grid.Row="3" Grid.Column="4" Margin="5" Click="btnBatu_Click" Content="+" FontSize="18" Background="#FFE0B2" FontWeight="Bold" />
 
-            <!-- Fila 2 -->
-            <Button
-            x:Name="btnLau"
-            Grid.Row="1"
-            Grid.Column="0"
-            Margin="5,5,23,5"
-            Click="btnLau_Click"
-            Content="4"
-            FontSize="18" />
-
-            <Button
-            x:Name="btnBost"
-            Grid.Row="1"
-            Grid.Column="1"
-            Margin="5,5,23,5"
-            Click="btnBost_Click"
-            Content="5"
-            FontSize="18" />
-
-            <Button
-            x:Name="btnSei"
-            Grid.Row="1"
-            Grid.Column="2"
-            Margin="5,5,0,5"
-            Click="btnSei_Click"
-            Content="6"
-            FontSize="18" HorizontalAlignment="Left" Width="169" />
-
-            <Button
-            x:Name="btnZatiketa"
-            Grid.Row="1"
-            Grid.Column="3"
-            Margin="19,5,5,5"
-            Click="btnZatiketa_Click"
-            Content="/"
-            FontSize="18" />
-
-            <!-- Fila 3 -->
-            <Button
-            x:Name="btnBat"
-            Grid.Row="2"
-            Grid.Column="0"
-            Margin="5,5,23,5"
-            Click="btnBat_Click"
-            Content="1"
-            FontSize="18" />
-
-            <Button
-            x:Name="btnBi"
-            Grid.Row="2"
-            Grid.Column="1"
-            Margin="5,5,23,5"
-            Click="btnBi_Click"
-            Content="2"
-            FontSize="18" />
-
-            <Button
-            x:Name="btnHiru"
-            Grid.Row="2"
-            Grid.Column="2"
-            Margin="5,5,21,5"
-            Click="btnHiru_Click"
-            Content="3"
-            FontSize="18" />
-
-            <Button
-            x:Name="btnBiderketa"
-            Grid.Row="2"
-            Grid.Column="3"
-            Margin="19,5,5,5"
-            Click="btnBiderketa_Click"
-            Content="X"
-            FontSize="18" />
-
-            <!-- Fila 4 -->
-            <Button
-            x:Name="btnZero"
-            Grid.Row="3"
-            Grid.Column="0"
-            Grid.ColumnSpan="2"
-            Margin="5,5,23,5"
-            Click="btnZero_Click"
-            Content="0"
-            FontSize="18" />
-
-            <Button
-            x:Name="btnKoma"
-            Grid.Row="3"
-            Grid.Column="2"
-            Margin="5,5,21,5"
-            Click="btnKoma_Click"
-            Content=","
-            FontSize="18" />
-
-            <Button
-            x:Name="btnBerdin"
-            Grid.Row="3"
-            Grid.Column="3"
-            Margin="19,5,5,5"
-            Click="btnBerdin_Click"
-            Content="="
-            FontSize="18" />
-        </Grid>
+        <!-- Lerroa 4 -->
+        <Button x:Name="btnZero" Grid.Row="4" Grid.Column="0" Margin="5,5,10,5" Click="btnZero_Click" Content="0" FontSize="18" Grid.ColumnSpan="2" />
+        <Button x:Name="btnKoma" Grid.Row="4" Grid.Column="2" Margin="5,5,5,5" Click="btnKoma_Click" Content="." FontSize="18" />
+        <Button x:Name="btnBerdin" Grid.Row="4" Grid.Column="3" Margin="5,5,5,5" Click="btnBerdin_Click" Content="=" FontSize="18" Background="#C8E6C9" FontWeight="Bold" />
+        <Button x:Name="btnPortzentaia" Grid.Row="4" Grid.Column="4" Margin="0,5,5,5" Click="btnPortzentaia_Click" Content="%" FontSize="18" Background="#FFE0B2" FontWeight="Bold" />
     </Grid>
 </Window>
