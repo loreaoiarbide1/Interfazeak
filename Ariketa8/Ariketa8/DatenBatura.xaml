@@ -1,0 +1,79 @@
+﻿<Window
+    x:Class="Ariketa8.DatenBatura"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Daten Batura"
+    Width="400"
+    Height="250"
+    WindowStartupLocation="CenterOwner"
+    ResizeMode="NoResize">
+    <Grid Background="#F5F5F5">
+        <!-- Lehenengo data eskatu -->
+        <StackPanel x:Name="panel1HasierakoDataEskatu" VerticalAlignment="Center" HorizontalAlignment="Center" Width="320">
+            <Label Content="Sartu hasierako data (dd/mm/uuuu):" FontWeight="Bold" Margin="0,0,0,5" />
+            <TextBox
+                x:Name="txtHasierakoa"
+                Margin="0,0,0,30"
+                Padding="8"
+                TextAlignment="Center"
+                FontSize="14" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
+                <Button
+                    x:Name="btnOnartu"
+                    Width="100"
+                    Margin="0,0,20,0"
+                    Padding="10"
+                    Click="btnOnartu_Click"
+                    Content="Onartu"
+                />
+                <Button
+                    x:Name="btnUtzi1"
+                    Width="100"
+                    Padding="10"
+                    Click="btnUtzi_Click"
+                    Content="Utzi"
+                />
+            </StackPanel>
+        </StackPanel>
+
+        <!-- Hilabeteak eskatu -->
+        <StackPanel x:Name="panel2HilabeteakEskatu" VerticalAlignment="Center" HorizontalAlignment="Center" Width="320" Visibility="Hidden">
+            <Label x:Name="lblSartutakoData" Content="Data sartu: " FontWeight="Bold" Margin="0,0,0,15" />
+
+            <Label Content="Zenbat hilabete gehitu nahi dituzu?" FontWeight="Bold" Margin="0,0,0,5" />
+            <TextBox
+                x:Name="txtHilabeteak"
+                Margin="0,0,0,30"
+                Padding="8"
+                TextAlignment="Center"
+                FontSize="14" />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="40">
+                <Button
+                    x:Name="btnOnartu2"
+                    Width="100"
+                    Margin="0,0,20,0"
+                    Padding="10"
+                    Click="btnOnartu2_Click"
+                    Content="Onartu"
+                />
+                <Button
+                    x:Name="btnAtzera"
+                    Width="100"
+                    Margin="0,0,20,0"
+                    Padding="10"
+                    Click="btnAtzera_Click"
+                    Content="Atzera"
+                />
+                <Button
+                    x:Name="btnUtzi"
+                    Width="100"
+                    Padding="10"
+                    Click="btnUtzi_Click"
+                    Content="Utzi"
+                />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

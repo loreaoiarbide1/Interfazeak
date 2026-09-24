@@ -1,0 +1,121 @@
+﻿<Window
+    x:Class="Ariketa8.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Ariketa8"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <Label
+            Margin="122,40,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Orain" />
+
+        <TextBox
+            x:Name="txtDataOrain"
+            Width="382"
+            Margin="0,40,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+
+        <Label
+            Margin="122,76,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Gaur" />
+
+        <TextBox
+            x:Name="txtDataGaur"
+            Width="382"
+            Margin="0,80,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap"  />
+
+        <Label
+            Margin="122,116,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Gaurko ordua" />
+
+        <TextBox
+            x:Name="txtDataGaurkoOrdua"
+            Width="382"
+            Margin="0,120,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap"  />
+
+        <Label
+            Margin="122,161,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Daten batura" />
+
+        <TextBox
+            x:Name="txtDatenBatura"
+            Width="382"
+            Height="60"
+            Margin="0,165,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap"
+            IsEnabled="True"
+            IsReadOnly="True"
+            PreviewMouseDown="txtDatenBatura_MouseDown"
+            VerticalScrollBarVisibility="Auto" />
+
+        <Label
+            Margin="122,230,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Daten aldea" />
+
+        <TextBox
+            x:Name="txtDatenAldea"
+            Width="382"
+            Height="60"
+            Margin="0,234,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap"
+            IsEnabled="True"
+            IsReadOnly="True"
+            PreviewMouseDown="txtDatenAldea_MouseDown"
+            VerticalScrollBarVisibility="Auto" />
+
+        <Button
+            x:Name="btnExekutatu"
+            Width="68"
+            Margin="297,300,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnExekutatu_Click"
+            Content="Exekutatu" />
+
+        <Button
+            x:Name="btnGarbitu"
+            Width="68"
+            Margin="423,300,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnGarbitu_Click"
+            Content="Garbitu" />
+
+        <Button
+            x:Name="btnIrten"
+            Width="68"
+            Margin="552,300,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="btnIrten_Click"
+            Content="Irten" />
+
+    </Grid>
+</Window>
