@@ -1,5 +1,7 @@
 ﻿using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Ariketa13
 {
@@ -31,12 +33,12 @@ namespace Ariketa13
 
         private void MenuGorde_Click(object sender, RoutedEventArgs e)
         {
-            // Balidazioa testu-koadroa hutsik dagoen egiaztatu
-            if (string.IsNullOrWhiteSpace(txtEditorea.Text))
+            // Balidazioa: testu-koadroa hutsik dagoen egiaztatu
+            if (string.IsNullOrWhiteSpace(txtEditorea.Document.Blocks.Count == 0 ? "" : new TextRange(txtEditorea.Document.ContentStart, txtEditorea.Document.ContentEnd).Text))
             {
                 MessageBox.Show("Errorea: Mesedez, idatzi zerbait gorde aurretik.", "Akats", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
-            }          
+            }
         }
 
         private void MenuIrten_Click(object sender, RoutedEventArgs e)
@@ -47,44 +49,90 @@ namespace Ariketa13
         // MENUA: EDITATU
         private void MenuEbaki_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(txtEditorea.Text);
-            txtEditorea.Clear();
+            if (txtEditorea.Selection.IsEmpty)
+            {
+                // Hala bada testu osoa moztu
+                Clipboard.SetText(new TextRange(txtEditorea.Document.ContentStart, txtEditorea.Document.ContentEnd).Text);
+                txtEditorea.Document.Blocks.Clear();
+            }
+            else
+            {
+                // Bestela hautaturiko testua moztu
+                Clipboard.SetText(txtEditorea.Selection.Text);
+                txtEditorea.Selection.Text = string.Empty;
+            }
         }
 
         private void MenuKopiatu_Click(object sender, RoutedEventArgs e)
         {
-            Clipboard.SetText(txtEditorea.Text);
+            if (txtEditorea.Selection.IsEmpty)
+            {
+                // Testu osoa kopiatu
+                Clipboard.SetText(new TextRange(txtEditorea.Document.ContentStart, txtEditorea.Document.ContentEnd).Text);
+            }
+            else
+            {
+                // Hautaturiko testua kopiatu
+                Clipboard.SetText(txtEditorea.Selection.Text);
+            }
         }
 
         private void MenuItsatsi_Click(object sender, RoutedEventArgs e)
         {
-            txtEditorea.Text = Clipboard.GetText();
+            string clipboardText = Clipboard.GetText();
+
+            if (!txtEditorea.Selection.IsEmpty)
+            {
+                // Hautaturiko testua ordeztu
+                txtEditorea.Selection.Text = clipboardText;
+            }
+            else
+            {
+                // Kurtsorearen posizioan txertatu
+                txtEditorea.CaretPosition.InsertTextInRun(clipboardText);
+            }
         }
 
         private void MenuEzabatu_Click(object sender, RoutedEventArgs e)
         {
-            txtEditorea.Clear();
+            txtEditorea.Document.Blocks.Clear();
         }
 
         // MENUA: ITURRIA (Letra-mota aldatu)
         private void MenuIturria_Arial_Click(object sender, RoutedEventArgs e)
         {
-            txtEditorea.FontFamily = new System.Windows.Media.FontFamily("Arial");
+            AldaraziIturria("Arial");
         }
 
         private void MenuIturria_Courier_Click(object sender, RoutedEventArgs e)
         {
-            txtEditorea.FontFamily = new System.Windows.Media.FontFamily("Courier New");
+            AldaraziIturria("Courier New");
         }
 
         private void MenuIturria_Impact_Click(object sender, RoutedEventArgs e)
         {
-            txtEditorea.FontFamily = new System.Windows.Media.FontFamily("Impact");
+            AldaraziIturria("Impact");
         }
 
         private void MenuIturria_Symbol_Click(object sender, RoutedEventArgs e)
         {
-            txtEditorea.FontFamily = new System.Windows.Media.FontFamily("Symbol");
+            AldaraziIturria("Symbol");
+        }
+
+        private void AldaraziIturria(string iturriaIzena)
+        {
+            if (txtEditorea.Selection.IsEmpty)
+            {
+                // Ez badago hautaketarik, dokumentuaren iturria guztia aldatu
+                txtEditorea.Selection.Select(txtEditorea.Document.ContentStart, txtEditorea.Document.ContentEnd);
+                txtEditorea.Selection.ApplyPropertyValue(TextElement.FontFamilyProperty, new FontFamily(iturriaIzena));
+                txtEditorea.CaretPosition = txtEditorea.Document.ContentEnd;
+            }
+            else
+            {
+                // Hautaturiko testua soilik aldatu
+                txtEditorea.Selection.ApplyPropertyValue(TextElement.FontFamilyProperty, new FontFamily(iturriaIzena));
+            }
         }
     }
 }

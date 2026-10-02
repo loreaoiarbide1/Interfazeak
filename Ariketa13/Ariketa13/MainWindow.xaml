@@ -57,14 +57,12 @@
             </MenuItem>
         </Menu>
 
-        <TextBox
+        <RichTextBox
             x:Name="txtEditorea"
             Grid.Row="1"
             Padding="10"
-            AcceptsReturn="True"
             FontFamily="Arial"
             FontSize="14"
-            TextWrapping="Wrap"
             VerticalScrollBarVisibility="Auto" />
     </Grid>
 </Window>
