@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Ariketa13"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Testu-Editorea"
+    Title="MainWindow"
     Width="900"
     Height="600"
     mc:Ignorable="d">
@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <Menu Grid.Row="0" Background="#F0F0F0">
-            <MenuItem Header="FITXATEGIA">
+            <MenuItem x:Name="MenuFitxategia" Header="FITXATEGIA">
                 <MenuItem
                     Click="MenuIreki_Click"
                     Header="Ireki"
@@ -29,7 +29,7 @@
                 <MenuItem Click="MenuIrten_Click" Header="Irten" />
             </MenuItem>
 
-            <MenuItem Header="EDITATU">
+            <MenuItem x:Name="MenuEditatu" Header="EDITATU">
                 <MenuItem
                     Click="MenuEbaki_Click"
                     Header="Moztu"
@@ -49,7 +49,7 @@
                     InputGestureText="Supr" />
             </MenuItem>
 
-            <MenuItem Header="ITURRIA">
+            <MenuItem x:Name="MenuIturria" Header="ITURRIA">
                 <MenuItem Click="MenuIturria_Arial_Click" Header="Arial" />
                 <MenuItem Click="MenuIturria_Courier_Click" Header="Courier" />
                 <MenuItem Click="MenuIturria_Impact_Click" Header="Impact" />

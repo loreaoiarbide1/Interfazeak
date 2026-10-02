@@ -31,7 +31,12 @@ namespace Ariketa13
 
         private void MenuGorde_Click(object sender, RoutedEventArgs e)
         {
-            // Gorde funtzionaltasuna
+            // Balidazioa testu-koadroa hutsik dagoen egiaztatu
+            if (string.IsNullOrWhiteSpace(txtEditorea.Text))
+            {
+                MessageBox.Show("Errorea: Mesedez, idatzi zerbait gorde aurretik.", "Akats", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }          
         }
 
         private void MenuIrten_Click(object sender, RoutedEventArgs e)
@@ -61,7 +66,7 @@ namespace Ariketa13
             txtEditorea.Clear();
         }
 
-        // MENUA: ITURRIA (Letra-tipoa aldatu)
+        // MENUA: ITURRIA (Letra-mota aldatu)
         private void MenuIturria_Arial_Click(object sender, RoutedEventArgs e)
         {
             txtEditorea.FontFamily = new System.Windows.Media.FontFamily("Arial");
