@@ -64,7 +64,7 @@ namespace Ariketa12
             if (e.Key == Key.Return)
             {
                 e.Handled = true;
-                // Mugitu fokusa hurrengo kontrolera
+                // Mugitu fokua hurrengo kontrolera
                 if (sender is TextBox textBox)
                 {
                     textBox.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
@@ -93,30 +93,39 @@ namespace Ariketa12
                 decimal dietakPrezioa = 0m;
                 if (chkGosaria.IsChecked == true)
                 {
-
                     dietakPrezioa += Gosaria;
                 }
                 if (chkBazkaria.IsChecked == true)
+                {
                     dietakPrezioa += Bazkaria;
+                }
                 if (chkAfaria.IsChecked == true)
+                {
                     dietakPrezioa += Afaria;
+                }
 
                 TxtDietakPrezioa.Text = dietakPrezioa.ToString("0.00 €");
 
                 // Bidaiak kalkulatu
                 decimal bidaiakPrezioa = 0m;
                 if (decimal.TryParse(txtKm.Text, out decimal kmKopurua))
+                {
                     bidaiakPrezioa += kmKopurua * Km;
+                }
 
                 if (decimal.TryParse(txtBidaiaOrdua.Text, out decimal bidaiaOrdua))
+                {
                     bidaiakPrezioa += bidaiaOrdua * Bidaia_ordua;
+                }
 
                 TxtBidaiakPrezioa.Text = bidaiakPrezioa.ToString("0.00 €");
 
                 // Lana kalkulatu
                 decimal lanaPrezioa = 0m;
                 if (decimal.TryParse(txtLanaOrdua.Text, out decimal lanaOrdua))
+                {
                     lanaPrezioa = lanaOrdua * Lanordua;
+                }
 
                 TxtLanaPrezioa.Text = lanaPrezioa.ToString("0.00 €");
 
