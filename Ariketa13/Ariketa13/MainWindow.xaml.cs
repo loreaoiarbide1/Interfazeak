@@ -28,7 +28,7 @@ namespace Ariketa13
         // MENUA: ARTXIBATZEA
         private void MenuIreki_Click(object sender, RoutedEventArgs e)
         {
-            // Ireki funtzionaltasuna
+            
         }
 
         private void MenuGorde_Click(object sender, RoutedEventArgs e)
