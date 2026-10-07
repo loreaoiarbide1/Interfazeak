@@ -14,6 +14,9 @@ namespace Ariketa1_2UD
             InitializeComponent();
             cmbLehentasuna.ItemsSource = Enum.GetValues(typeof(Lehentasuna));
             cmbLehentasuna.SelectedItem = Lehentasuna.Ertaina;
+            
+          // Egutegian atzoko egunak desaktibatu hautatu ezin izateko
+            dpMugaEguna.DisplayDateStart = DateTime.Today;
             dpMugaEguna.SelectedDate = DateTime.Today;
         }
 
@@ -29,7 +32,7 @@ namespace Ariketa1_2UD
 
         private void btnGorde_Click(object sender, RoutedEventArgs e)
         {
-            // BALIDAZIOAK
+            // 1. BALIDAZIOA: Izenburua ezin da hutsik egon
             if (string.IsNullOrWhiteSpace(txtIzenburua.Text))
             {
                 MessageBox.Show("Izenburua ezin da hutsik egon.", "Balidazio-errorea", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -37,9 +40,18 @@ namespace Ariketa1_2UD
                 return;
             }
 
+            // 2. BALIDAZIOA: Data hautatuta egon behar da
             if (!dpMugaEguna.SelectedDate.HasValue)
             {
                 MessageBox.Show("Mesedez, hautatu azken eguna.", "Balidazio-errorea", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // 3. BALIDAZIOA: Muga-eguna gaur edo ondorengoa izan behar da (muga-eguna ≥ gaur)
+            if (dpMugaEguna.SelectedDate.Value.Date < DateTime.Today)
+            {
+                MessageBox.Show("Muga-egunak gaurkoa edo ondorengoa izan behar du.", "Balidazio-errorea", MessageBoxButton.OK, MessageBoxImage.Warning);
+                dpMugaEguna.Focus();
                 return;
             }
 
