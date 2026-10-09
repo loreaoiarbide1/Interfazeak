@@ -34,17 +34,23 @@
                 <DataGridTextColumn
                     Width="*"
                     Binding="{Binding Izenburua}"
-                    Header="Titulua" />
+                    Header="Titulua"
+                    IsReadOnly="True"
+                    />
 
                 <DataGridTextColumn
                     Width="130"
                     Binding="{Binding Lehentasuna}"
-                    Header="Lehentasuna" />
+                    Header="Lehentasuna"
+                    IsReadOnly="True"
+                    />
 
                 <DataGridTextColumn
                     Width="130"
                     Binding="{Binding MugaEguna, StringFormat=yyyy-MM-dd}"
-                    Header="Azken eguna" />
+                    Header="Azken eguna"
+                    IsReadOnly="True"
+                    />
 
                 <DataGridCheckBoxColumn
                     Width="70"
