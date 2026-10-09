@@ -13,9 +13,9 @@ namespace Ariketa1_2UD
         {
             InitializeComponent();
             cmbLehentasuna.ItemsSource = Enum.GetValues(typeof(Lehentasuna));
-            cmbLehentasuna.SelectedItem = Lehentasuna.Ertaina;
-            
-          // Egutegian atzoko egunak desaktibatu hautatu ezin izateko
+            cmbLehentasuna.SelectedItem = Lehentasuna.Baxua;
+
+            // Egutegian gaurko data baino lehenagoko egunak desaktibatuta hautatu ezin izateko
             dpMugaEguna.DisplayDateStart = DateTime.Today;
             dpMugaEguna.SelectedDate = DateTime.Today;
         }
@@ -47,7 +47,7 @@ namespace Ariketa1_2UD
                 return;
             }
 
-            // BALIDAZIOA: Muga-eguna gaur edo ondorengoa izan behar da (muga-eguna ≥ gaur)
+            // Muga-eguna gaur edo ondorengoa izan behar da (muga-eguna ≥ gaur)
             if (dpMugaEguna.SelectedDate.Value.Date < DateTime.Today)
             {
                 MessageBox.Show("Muga-egunak gaurkoa edo ondorengoa izan behar du.", "Balidazio-errorea", MessageBoxButton.OK, MessageBoxImage.Warning);

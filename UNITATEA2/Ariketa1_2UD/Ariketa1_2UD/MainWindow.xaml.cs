@@ -14,7 +14,7 @@ namespace Ariketa1_2UD
         // ObservableCollection interfazea automatikoki eguneratzeko
         private ObservableCollection<Ataza> _atazak = new ObservableCollection<Ataza>();
 
-        // Bide-izena erlatiboa izateko eta beti karpeta berean gordetzeko:
+        // Helbidea erlatiboa izateko eta beti karpeta berean gordetzeko:
         private readonly string _xmlPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "atazak.xml");
 
         public MainWindow()
