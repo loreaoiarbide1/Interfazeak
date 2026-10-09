@@ -35,7 +35,7 @@ namespace Ariketa1_2UD
             GordeXML();
         }
 
-        // --- XML KARGATU ---
+        // --- XML-a KARGATU ---
         private void KargatuXML()
         {
             if (!File.Exists(_xmlPath)) return;
@@ -51,12 +51,10 @@ namespace Ariketa1_2UD
                 {
                     // Lehentasuna Enum-era bihurtu
                     Enum.TryParse(x.Element("Lehentasuna")?.Value, out Lehentasuna leh);
-
-                    // Data parsing
+                  
                     DateTime.TryParse(x.Element("AzkenEguna")?.Value, out DateTime muga);
                     if (muga == DateTime.MinValue) muga = DateTime.Today;
-
-                    // Id parsing
+                   
                     int.TryParse(x.Attribute("id")?.Value, out int id);
 
                     // Egoera
@@ -83,10 +81,10 @@ namespace Ariketa1_2UD
         {
             try
             {
-                string directory = Path.GetDirectoryName(_xmlPath);
-                if (!Directory.Exists(directory))
+                string direktorioa = Path.GetDirectoryName(_xmlPath);
+                if (!Directory.Exists(direktorioa))
                 {
-                    Directory.CreateDirectory(directory);
+                    Directory.CreateDirectory(direktorioa);
                 }
 
                 XDocument doc = new XDocument(
