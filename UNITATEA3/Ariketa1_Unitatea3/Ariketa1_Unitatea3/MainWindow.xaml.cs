@@ -111,7 +111,7 @@ namespace Ariketa1_Unitatea3
 
             DateTime hautatutakoData = DpErreserbaData.SelectedDate ?? DateTime.Today;
 
-            // Begiratu ea badagoen erreserbarik hautatutako eserleku eta data horretan
+            // Begiratzen du ea badagoen erreserbarik hautatutako eserleku eta data horretan
             bool badagoErreserba = erreserbaGuztiak.Exists(x => x.GarraioMota == unekoGarraioa &&
                                                               x.Errenkada == hautatutakoErrenkada &&
                                                               x.Zutabea == hautatutakoZutabea &&
@@ -129,7 +129,7 @@ namespace Ariketa1_Unitatea3
                                            x.Zutabea == hautatutakoZutabea &&
                                            x.Data.Date == hautatutakoData.Date);
 
-            // Fitxategian gorde eta mapak berritu (eserlekua berriro gris/libre geratuko da)
+            // Fitxategian gorde eta mapak berritu (eserlekua berriro berde/libre geratuko da)
             GordeErreserbakDiskora();
             AktualizatuMapak();
 
