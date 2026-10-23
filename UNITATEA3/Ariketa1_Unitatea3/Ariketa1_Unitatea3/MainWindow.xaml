@@ -19,21 +19,21 @@
             <TabItem Header="Autobusa">
                 <local:SeatMapControl
                     x:Name="BusMap"
-                    AccentColor="Green"
+                    AccentColor="Yellow"
                     Columns="4"
                     Rows="6" />
             </TabItem>
             <TabItem Header="Trena">
                 <local:SeatMapControl
                     x:Name="TrainMap"
-                    AccentColor="Green"
+                    AccentColor="Yellow"
                     Columns="6"
                     Rows="8" />
             </TabItem>
             <TabItem Header="Hegazkina">
                 <local:SeatMapControl
                     x:Name="PlaneMap"
-                    AccentColor="Green"
+                    AccentColor="Yellow"
                     Columns="3"
                     Rows="10" />
             </TabItem>
@@ -47,7 +47,10 @@
                 Margin="0,0,0,5"
                 FontWeight="Bold"
                 Text="Erreserba Data:" />
-            <DatePicker x:Name="DpErreserbaData" Margin="0,0,0,15" />
+            <DatePicker
+                x:Name="DpErreserbaData"
+                Margin="0,0,0,15"
+                SelectedDateChanged="DpErreserbaData_SelectedDateChanged" />
 
             <Button
                 Margin="0,0,0,10"

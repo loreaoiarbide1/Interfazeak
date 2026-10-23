@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Ariketa1_Unitatea3
@@ -61,30 +63,59 @@ namespace Ariketa1_Unitatea3
 
             botoiak = new Button[Rows, Columns];
 
+            // Botoiaren gainetik pasatzean kolorea ez aldatzeko estilo gardena
+            Style botoiEstiloa = new Style(typeof(Button));
+            ControlTemplate template = new ControlTemplate(typeof(Button));
+
+            // Border bat sortzen dugu atzeko planoko kolorea erabat errespetatzeko
+            FrameworkElementFactory borderFactory = new FrameworkElementFactory(typeof(Border));
+            borderFactory.Name = "border";
+            borderFactory.SetValue(Border.BackgroundProperty, new System.Windows.Data.Binding("Background") { RelativeSource = new RelativeSource(RelativeSourceMode.TemplatedParent) });
+            borderFactory.SetValue(Border.BorderBrushProperty, Brushes.Gray);
+            borderFactory.SetValue(Border.BorderThicknessProperty, new Thickness(1));
+
+            // Edukia (Content) ondo zentratuta agertzeko
+            FrameworkElementFactory contentPresenter = new FrameworkElementFactory(typeof(ContentPresenter));
+            contentPresenter.SetValue(ContentPresenter.HorizontalAlignmentProperty, HorizontalAlignment.Center);
+            contentPresenter.SetValue(ContentPresenter.VerticalAlignmentProperty, VerticalAlignment.Center);
+            borderFactory.AppendChild(contentPresenter);
+
+            template.VisualTree = borderFactory;
+            botoiEstiloa.Setters.Add(new Setter(Button.TemplateProperty, template));
+
             for (int r = 0; r < Rows; r++)
             {
                 for (int c = 0; c < Columns; c++)
                 {
                     Button btn = new Button
                     {
-                        Content = $"{r + 1}-{c + 1}", // Zenbakia bakarrik, garbi ikusteko
-                        ToolTip = "Libre",            // Sagua gainean jartzean egoera ikusteko
+                        Content = $"{r + 1}-{c + 1}",
+                        ToolTip = "Libre",
                         Margin = new Thickness(2),
                         Padding = new Thickness(0),
                         FontSize = 11,
-                        Background = Brushes.LightGray,
+                        Background = Brushes.Green,
+                        Style = botoiEstiloa, // Hemen aplikatzen da estilo pertsonalizatua
                         Tag = new Point(r, c)
                     };
 
                     // Gertaerak (Hover eta Klik)
-                    btn.Click += Eserlekua_Click;
-                    btn.MouseEnter += (s, e) => {
+                    btn.Click += EserlekuaKlikatu;
+                    btn.MouseEnter += delegate (object sender, MouseEventArgs e)
+                    {
+                        // Okupatuta badago (gorria) edo hautatuta, kolorea ez da aldatuko
                         if (btn.Background != Brushes.IndianRed && btn.Background != AccentColor)
+                        {
                             btn.Background = Brushes.LightSkyBlue;
+                        }
                     };
-                    btn.MouseLeave += (s, e) => {
+                    btn.MouseLeave += delegate (object sender, MouseEventArgs e)
+                    {
+                        // Urdin argia bazegoen, berriro berdera bueltatuko du
                         if (btn.Background == Brushes.LightSkyBlue)
-                            btn.Background = Brushes.LightGray;
+                        {
+                            btn.Background = Brushes.Green;
+                        }
                     };
 
                     botoiak[r, c] = btn;
@@ -93,29 +124,28 @@ namespace Ariketa1_Unitatea3
             }
         }
 
-        private void Eserlekua_Click(object sender, RoutedEventArgs e)
+        private void EserlekuaKlikatu(object sender, RoutedEventArgs e)
         {
-            if (sender is Button btn && btn.Tag is Point p)
+            if (sender is Button btn)
             {
-                int r = (int)p.X;
-                int c = (int)p.Y;
-
-                // Okupatuta badago ezin da hautatu
-                if (btn.Background == Brushes.IndianRed) return;
-
-                if (btn.Background == AccentColor)
+                if (btn.Tag is Point p)
                 {
-                    // Deshautatu
-                    btn.Background = Brushes.LightGray;
-                    btn.ToolTip = "Libre";
-                    SeatUnselected?.Invoke(this, new SeatEventArgs(r, c));
-                }
-                else
-                {
-                    // Hautatu
-                    btn.Background = AccentColor;
-                    btn.ToolTip = "Hautatuta";
-                    SeatSelected?.Invoke(this, new SeatEventArgs(r, c));
+                    int r = (int)p.X;
+                    int c = (int)p.Y;
+
+                    // Dagoeneko hautatuta badago (urdinez/azentu-kolorez)
+                    if (btn.Background == AccentColor)
+                    {
+                        // Hasierako egoerara bueltatu (okupatuta bazegoen gorrira, bestela berdera)
+                        btn.Background = btn.ToolTip?.ToString() == "Okupatuta" ? Brushes.IndianRed : Brushes.Green;
+                        SeatUnselected?.Invoke(this, new SeatEventArgs(r, c));
+                    }
+                    else
+                    {
+                        // Eserlekua (libre zein okupatua) hautatu ezabatzeko edo erreserbatzeko
+                        btn.Background = AccentColor;
+                        SeatSelected?.Invoke(this, new SeatEventArgs(r, c));
+                    }
                 }
             }
         }
@@ -135,11 +165,11 @@ namespace Ariketa1_Unitatea3
         {
             if (botoiak != null && r >= 0 && r < Rows && c >= 0 && c < Columns)
             {
-                botoiak[r, c].Background = Brushes.LightGray;
+                botoiak[r, c].Background = Brushes.Green;
                 botoiak[r, c].Foreground = Brushes.Black;
                 botoiak[r, c].ToolTip = "Libre";
             }
-        }
+        }      
     }
 
     public class SeatEventArgs : EventArgs
@@ -153,4 +183,6 @@ namespace Ariketa1_Unitatea3
             Column = column;
         }
     }
+
+
 }

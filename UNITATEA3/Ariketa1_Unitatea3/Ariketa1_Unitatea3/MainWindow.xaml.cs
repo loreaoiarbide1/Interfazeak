@@ -12,7 +12,7 @@ namespace Ariketa1_Unitatea3
         private string fitxategia = "erreserbak.json";
         private List<Erreserba> erreserbaGuztiak = new List<Erreserba>();
 
-        // Hautatutako aldibereko eserlekua gogoratzeko
+        // Hautatutako eserlekuaren koordenatuak eta uneko garraioa
         private int hautatutakoErrenkada = -1;
         private int hautatutakoZutabea = -1;
         private string unekoGarraioa = "Autobusa";
@@ -20,6 +20,10 @@ namespace Ariketa1_Unitatea3
         public MainWindow()
         {
             InitializeComponent();
+
+            // Gaurko data ezartzen dugu hasierako balio gisa DatePicker-ean
+            DpErreserbaData.SelectedDate = DateTime.Today;
+
             GertaerakHarpidetu();
             KargatuErreserbakDiskora();
         }
@@ -56,6 +60,12 @@ namespace Ariketa1_Unitatea3
             }
         }
 
+        // Data aldatzen den bakoitzean erreserbak iragazteko exekutatzen da
+        private void DpErreserbaData_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            AktualizatuMapak();
+        }
+
         private void BtnErreserbatu_Click(object sender, RoutedEventArgs e)
         {
             // BALIDAZIOA: Data etorkizunekoa den ala ez egiaztatu
@@ -84,13 +94,8 @@ namespace Ariketa1_Unitatea3
             erreserbaGuztiak.Add(berria);
             GordeErreserbakDiskora();
 
-            
-            if (unekoGarraioa == "Autobusa")
-                BusMap.OkupatuEserlekua(hautatutakoErrenkada, hautatutakoZutabea);
-            else if (unekoGarraioa == "Trena")
-                TrainMap.OkupatuEserlekua(hautatutakoErrenkada, hautatutakoZutabea);
-            else if (unekoGarraioa == "Hegazkina")
-                PlaneMap.OkupatuEserlekua(hautatutakoErrenkada, hautatutakoZutabea);
+            // Interfazea eguneratu data horren arabera
+            AktualizatuMapak();
 
             MessageBox.Show("Erreserba arrakastaz burutu da!", "Ondo", MessageBoxButton.OK, MessageBoxImage.Information);
             GarbituHautapena();
@@ -100,16 +105,35 @@ namespace Ariketa1_Unitatea3
         {
             if (hautatutakoErrenkada == -1 || hautatutakoZutabea == -1)
             {
-                MessageBox.Show("Mesedez, hautatu bertan behera utzi nahi duzun eserlekua.", "Oharra", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Mesedez, hautatu bertan behera utzi nahi duzun eserlekua (gorria).", "Oharra", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
 
-            erreserbaGuztiak.RemoveAll(x => x.GarraioMota == unekoGarraioa && x.Errenkada == hautatutakoErrenkada && x.Zutabea == hautatutakoZutabea);
-            GordeErreserbakDiskora();
+            DateTime hautatutakoData = DpErreserbaData.SelectedDate ?? DateTime.Today;
 
-            // UI eguneratu mapan
-            EguneratuMapak();
-            MessageBox.Show("Erreserba bertan behera utzi da.", "Ezabatuta", MessageBoxButton.OK, MessageBoxImage.Information);
+            // Begiratu ea badagoen erreserbarik hautatutako eserleku eta data horretan
+            bool badagoErreserba = erreserbaGuztiak.Exists(x => x.GarraioMota == unekoGarraioa &&
+                                                              x.Errenkada == hautatutakoErrenkada &&
+                                                              x.Zutabea == hautatutakoZutabea &&
+                                                              x.Data.Date == hautatutakoData.Date);
+
+            if (!badagoErreserba)
+            {
+                MessageBox.Show("Hautatutako eserlekua ez dago erreserbatuta data honetan.", "Oharra", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            // Zerrendatik kendu
+            erreserbaGuztiak.RemoveAll(x => x.GarraioMota == unekoGarraioa &&
+                                           x.Errenkada == hautatutakoErrenkada &&
+                                           x.Zutabea == hautatutakoZutabea &&
+                                           x.Data.Date == hautatutakoData.Date);
+
+            // Fitxategian gorde eta mapak berritu (eserlekua berriro gris/libre geratuko da)
+            GordeErreserbakDiskora();
+            AktualizatuMapak();
+
+            MessageBox.Show("Erreserba bertan behera utzi da eta eserlekua berriro libre dago.", "Ezabatuta", MessageBoxButton.OK, MessageBoxImage.Information);
             GarbituHautapena();
         }
 
@@ -135,7 +159,7 @@ namespace Ariketa1_Unitatea3
                 {
                     string json = File.ReadAllText(fitxategia);
                     erreserbaGuztiak = JsonSerializer.Deserialize<List<Erreserba>>(json) ?? new List<Erreserba>();
-                    EguneratuMapak();
+                    AktualizatuMapak();
                 }
                 catch (Exception ex)
                 {
@@ -144,18 +168,33 @@ namespace Ariketa1_Unitatea3
             }
         }
 
-        private void EguneratuMapak()
+        private void AktualizatuMapak()
         {
-            // Mapak berrabiarazi eta gordetako erreserbak markatu
+            // 1. Mapak berriro hasieratu (eserleku guztiak gris argiz uzteko)
             BusMap.InitializeMap();
             TrainMap.InitializeMap();
             PlaneMap.InitializeMap();
 
+            DateTime hautatutakoData = DpErreserbaData.SelectedDate ?? DateTime.Today;
+
+            // 2. Data horretako erreserbak soilik markatu gorriz
             foreach (var r in erreserbaGuztiak)
             {
-                if (r.GarraioMota == "Autobusa") BusMap.OkupatuEserlekua(r.Errenkada, r.Zutabea);
-                else if (r.GarraioMota == "Trena") TrainMap.OkupatuEserlekua(r.Errenkada, r.Zutabea);
-                else if (r.GarraioMota == "Hegazkina") PlaneMap.OkupatuEserlekua(r.Errenkada, r.Zutabea);
+                if (r.Data.Date == hautatutakoData.Date)
+                {
+                    if (r.GarraioMota == "Autobusa")
+                    {
+                        BusMap.OkupatuEserlekua(r.Errenkada, r.Zutabea);
+                    }
+                    else if (r.GarraioMota == "Trena")
+                    {
+                        TrainMap.OkupatuEserlekua(r.Errenkada, r.Zutabea);
+                    }
+                    else if (r.GarraioMota == "Hegazkina")
+                    {
+                        PlaneMap.OkupatuEserlekua(r.Errenkada, r.Zutabea);
+                    }
+                }
             }
         }
     }
